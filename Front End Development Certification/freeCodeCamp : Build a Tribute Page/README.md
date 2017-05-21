@@ -1,4 +1,4 @@
-# Some Must-Knowns
+# Some Must-Knowns :metal:
 
 ### BootStrap Class
 * jumbotron
@@ -6,5 +6,5 @@
 * col-sm-offset-1
 
 ### HTML tags
-* <blockquote>
-* <footer><cite>
+* \<blockquote\>
+* \<footer\>\<cite\>
