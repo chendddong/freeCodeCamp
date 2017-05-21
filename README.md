@@ -5,3 +5,4 @@
 A good place to brush up some front-end stuff
 
 * [Front-End Project 1 ](https://codepen.io/pcchen/full/aWYbzr/)
+* [Front-End Project 1 template](https://codepen.io/freeCodeCamp/full/NNvBQW)
