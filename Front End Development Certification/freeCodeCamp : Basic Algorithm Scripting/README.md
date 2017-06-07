@@ -162,5 +162,24 @@ confirmEnding("Bastian", "n");
 /* 
     The difference between substring(start, end)
     and substr(start, end)
+    e.g.
+    str = "abcdefg";
+    str.substring(1, 3); // bc
+    str.substr(1, 3); // bcd
 */
+```
+8.  Repeat a string repeat a string
+
+```javascript
+
+function repeatStringNumTimes(str, num) {
+  var result = "";
+  // concatenate the string just by using '+'
+  for (var i = 0; i < num; i++) {
+    result += str;  
+  }
+  return result;
+}
+
+repeatStringNumTimes("abc", 3);
 ```
