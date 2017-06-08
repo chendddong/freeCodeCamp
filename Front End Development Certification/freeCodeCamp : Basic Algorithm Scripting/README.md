@@ -345,3 +345,27 @@ destroyer([3, 5, 1, 2, 2], 2, 3, 5);
 
 ```
 
+15. Where do I belong
+
+```javascript
+
+
+function getIndexToIns(arr, num) {
+//   push the number into the array
+  arr.push(num);
+//   sort the new array
+  arr.sort(function(a, b) {
+    return a - b;
+  });
+//   find the first occurrence
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] === num) {
+      break;
+    }
+  }
+  return i;
+}
+
+getIndexToIns([3, 10, 5], 3);
+
+```
