@@ -369,3 +369,52 @@ function getIndexToIns(arr, num) {
 getIndexToIns([3, 10, 5], 3);
 
 ```
+
+16. Caesars Cipher
+
+###### ROT13
+
+    ABCDEFGHIJKLMNOPQRSTUVWXYZ
+    ||||||||||||||||||||||||||
+    vvvvvvvvvvvvvvvvvvvvvvvvvv
+    NOPQRSTUVWXYZABCDEFGHIJKLM
+
+```javascript
+
+
+function rot13(str) { // LBH QVQ VG!
+  // capitalize the whole string
+  str = str.toUpperCase();
+  // split into character
+  var strArr = str.split('');
+  // convert each character
+  var VALUE_A = 'A'.charCodeAt(0);
+  var VALUE_Z = 'Z'.charCodeAt(0);
+  
+  // traverse the whole character arr and convert
+  for (var i = 0; i < strArr.length; i++) {
+    var charValue = strArr[i].charCodeAt(0);
+    if (charValue < VALUE_A || charValue > VALUE_Z) {
+      continue;
+    }
+    strArr[i] = convert(strArr[i]);
+  }
+  
+  return strArr.join('');
+}
+
+// convert a single string 
+function convert(singleStr) {
+  var VALUE_M = 'M'.charCodeAt(0);
+  var val = singleStr.charCodeAt(0);
+  if (val <= VALUE_M) {
+    return String.fromCharCode(val + 13);
+  }
+  
+  return String.fromCharCode(val - 13);
+}
+// Change the inputs below to test
+rot13("SERR YBIR?");
+
+
+```
