@@ -256,4 +256,67 @@ slasher([1, 2, 3], 2);
 
 ```javascript
 
+function mutation(arr) {
+  // should convert to lowercase first
+  var dict = arr[0].toLowerCase();
+  var note = arr[1].toLowerCase();
+  /* e.g.
+  'Blue Whale'.indexOf('Blue');     // returns  0
+  'Blue Whale'.indexOf('Blute');    // returns -1
+  */
+  
+  // traverse the note and compare every character using indexOf() with the dict
+  for (var i = 0; i < note.length; i++) {
+    if (dict.indexOf(note[i]) < 0) {
+      return false;    
+    }
+  }
+  return true;
+  
+}
+
+mutation(["Hello", "hey"]);
+
+```
+
+13. Falsy Bouncer
+
+>The double-application of the  ! operator will make the filter callback return true when the value is "truthy" and false when it's "falsy".
+
+>(Your code is calling isNaN() but not passing it a value; that's why that test
+didn't work for you. The isNaN() function returns true if its parameter, when coerced to a number, is NaN, and false otherwise.)
+
+>Using the Boolean filter in the second solution would work too as LoremIpsum
+notes in another answer, because the built-in Boolean constructor does pretty much the exact same thing as !!.
+
+```javascript
+
+////////////////////////////////
+////////// Solution 1 //////////
+////////////////////////////////
+
+function bouncer(arr) {
+  var clear1 = [];
+  var clear2 = [];
+  clear1 = arr.filter(function(word){
+    return !!word;
+});
+  return clear1;
+}
+
+bouncer([1, null, NaN, 2, undefined]);
+
+////////////////////////////////
+////////// Solution 2 //////////
+////////////////////////////////
+
+function bouncer(arr) {
+  var clear1 = [];
+  var clear2 = [];
+  clear1 = arr.filter(Boolean);
+  return clear1;
+}
+
+bouncer([1, null, NaN, 2, undefined]);
+
 ```
