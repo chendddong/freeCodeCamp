@@ -320,3 +320,28 @@ function bouncer(arr) {
 bouncer([1, null, NaN, 2, undefined]);
 
 ```
+
+14. Seek and Destroy
+
+>You can also use the Array.from() method or the spread operator to convert arguments to a real Array:
+
+    var args = Array.from(arguments);
+    var args = [...arguments];
+
+```javascript
+
+function destroyer(arr) {
+  var args = Array.from(arguments); // [[3, 5, 1, 2, 2], 2, 3, 5]
+  for (var i = 1; i < args.length; i++) {
+    arr = arr.filter(function(word) { 
+      return word !== args[i];
+    });
+  }
+  return arr;
+}
+
+destroyer([3, 5, 1, 2, 2], 2, 3, 5);
+
+
+```
+
