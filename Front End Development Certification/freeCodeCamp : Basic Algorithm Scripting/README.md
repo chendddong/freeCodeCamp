@@ -183,3 +183,25 @@ function repeatStringNumTimes(str, num) {
 
 repeatStringNumTimes("abc", 3);
 ```
+
+9. Truncate a string
+
+```javascript
+
+function truncateString(str, num) {
+  // "hello" --- "6" --- "hello"
+  if (str.length <= num) {
+    return str.slice(0, num);
+  }
+  // "hello" --- "4" --- "h..."
+  if (num > 3) {
+    return str.slice(0, num - 3) + "..."; 
+  }
+  
+  // "hello" --- "2" --- "he..."
+  return str.slice(0, num) + "...";
+}
+
+truncateString("hello", 2);
+
+```
