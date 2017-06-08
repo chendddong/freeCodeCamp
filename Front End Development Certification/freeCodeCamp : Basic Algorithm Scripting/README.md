@@ -205,3 +205,55 @@ function truncateString(str, num) {
 truncateString("hello", 2);
 
 ```
+
+10. Chunky Monkey
+
+```javascript
+
+function chunkArrayInGroups(arr, size) {
+  var result = [];
+  for (var i = 0; i < arr.length; i += size) {
+    var slice;
+    /* 
+        If end is greater than the length of the sequence, 
+        slice extracts through the end of the sequence (arr.length).
+    */
+//    if (arr.length - i < size) {
+//      slice = arr.slice(i);
+//    } else {
+    slice = arr.slice(i, i + size);  
+//    }
+    result.push(slice);
+  }
+  return result;
+}
+
+chunkArrayInGroups(["a", "b", "c", "d"], 2);
+
+```
+
+11. Slasher Flick
+
+```javascript
+
+function slasher(arr, howMany) {
+  if (howMany >= arr.length) {
+    return [];
+  }
+/* How to use the splice */
+//  e.g.
+//  myFish.splice(2, 1); remove 1 item at 2-index position (that is, "drum")
+  
+  arr.splice(0,howMany);
+  return arr;
+}
+
+slasher([1, 2, 3], 2);
+
+```
+
+12. Mutations
+
+```javascript
+
+```
